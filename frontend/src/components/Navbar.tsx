@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { ScheduleCallForm } from "./ScheduleCallForm";
 
 export const Navbar = () => {
@@ -7,7 +7,6 @@ export const Navbar = () => {
   const toggleForm = () => {
     setIsFormOpen(!isFormOpen);
   };
-
   return (
     <>
       <nav className="w-full h-16 bg-white shadow-md border rounded-xl mt-2">
