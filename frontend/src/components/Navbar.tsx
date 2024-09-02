@@ -9,7 +9,7 @@ export const Navbar = () => {
   };
   return (
     <>
-      <nav className="w-full h-16 bg-white shadow-md border rounded-xl mt-2">
+      <nav className="w-full h-16 bg-transparent backdrop-blur-2xl shadow-md border rounded-xl mt-2 bg-">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full">
           <div className="flex-shrink-0">
             <a href="#" className="text-2xl font-bold text-gray-800">

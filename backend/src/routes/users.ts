@@ -15,7 +15,8 @@ userRouter.post("/",(req:Request,res:Response)=>{
         datasourceUrl: dburl,
     }).$extends(withAccelerate());
 
-    const body=req.json();
+    // figure out this 
+    // const body=req.json();
 
     res.json({
         msg:"user api working"
