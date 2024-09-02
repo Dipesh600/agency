@@ -1,5 +1,7 @@
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/HeroSection";
+import { AnimateSharedLayout } from "framer-motion";
+import { AnimatedPinDemo } from "../components/Projects";
 
 export const LandingPage = () => {
   return (
@@ -17,7 +19,7 @@ export const LandingPage = () => {
 
         {/* Other Content */}
         <div className="w-full">
-          
+            <AnimatedPinDemo/>
         </div>
       </div>
     </>
