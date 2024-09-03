@@ -1,7 +1,7 @@
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/HeroSection";
-import { AnimateSharedLayout } from "framer-motion";
 import { AnimatedPinDemo } from "../components/Projects";
+import "../ui/font.css";
 
 export const LandingPage = () => {
   return (
@@ -16,10 +16,22 @@ export const LandingPage = () => {
         <div className="w-full h-[calc(100vh-4rem)] mt-16 border-2 rounded-xl">
           <Hero />
         </div>
+        
+        {/* Spacer Div */}
+        <div className="mt-64"></div> {/* Adjusted margin for spacing below Hero */}
 
-        {/* Other Content */}
-        <div className="w-full">
-            <AnimatedPinDemo/>
+        {/* Project Section */}
+        <div className="relative">
+          <h2 className="absolute inset-0 text-center font-extrabold text-4xl text-gray-300 amaranth-regular-italic">
+            Our Work
+          </h2>
+          <h2 className="relative text-center font-extrabold text-4xl mt-16 amaranth-regular-italic">
+            Our Work
+          </h2>
+          
+          <div className="w-full">
+            <AnimatedPinDemo />
+          </div>
         </div>
       </div>
     </>
