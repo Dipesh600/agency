@@ -1,5 +1,5 @@
 import { BackgroundBeamsWithCollision } from "../ui/collisions";
-import "../ui/font.css"
+import "../fonts/font.css"
 
 export function Hero() {
   return (

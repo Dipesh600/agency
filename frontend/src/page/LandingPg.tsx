@@ -1,24 +1,25 @@
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/HeroSection";
 import { AnimatedPinDemo } from "../components/Projects";
-import "../ui/font.css";
+import { TechStackBand } from "../ui/techband";
+import "../fonts/font.css"
 
 export const LandingPage = () => {
   return (
     <>
       <div className="w-full">
         {/* Navbar Section */}
-        <div className="w-full h-16 fixed top-0 left-0 z-50 bg-white shadow-md">
+        <div className="w-full h-16 bg-white shadow-md">
           <Navbar />
         </div>
 
         {/* Hero Section */}
-        <div className="w-full h-[calc(100vh-4rem)] mt-16 border-2 rounded-xl">
+        <div className="w-full h-[calc(100vh-4rem)] border-2 rounded-xl">
           <Hero />
         </div>
         
         {/* Spacer Div */}
-        <div className="mt-64"></div> {/* Adjusted margin for spacing below Hero */}
+        <div className="mt-64"></div>
 
         {/* Project Section */}
         <div className="relative">
@@ -31,6 +32,10 @@ export const LandingPage = () => {
           
           <div className="w-full">
             <AnimatedPinDemo />
+          </div>
+
+          <div className="mt-16">
+            <TechStackBand/>
           </div>
         </div>
       </div>
