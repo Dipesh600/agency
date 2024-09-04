@@ -37,6 +37,10 @@ export const LandingPage = () => {
           <div className="mt-16">
             <TechStackBand/>
           </div>
+
+          
+
+
         </div>
       </div>
     </>

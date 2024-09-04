@@ -19,6 +19,7 @@ model User{
   firstName String 
   lastName  String 
   email     String @unique
+  password  String 
   phoneNo   Int?
   project   Project[]
 
@@ -30,6 +31,7 @@ model PremiumUser{
   firstName   String 
   lastName    String 
   email       String @unique
+  password  String 
   phoneNo     Int?
   project     Premiumproject[]
 
@@ -52,5 +54,16 @@ model Premiumproject{
   createdAt DateTime @default(now())
   premiumuserId  Int
   premiumUser  PremiumUser @relation(fields: [premiumuserId],references: [id])
+  
+}
+
+model Developers{
+  id        Int @id@default(autoincrement())
+  firstName String 
+  lastName  String 
+  Role      String 
+  email     String @unique
+  password  Int
+  phoneNo   Int 
   
 }
