@@ -1,16 +1,24 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { ScheduleCallForm } from "./ScheduleCallForm";
+import { Link } from "react-router-dom";  // Import Link from react-router-dom
 
 export const Navbar = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleForm = () => {
     setIsFormOpen(!isFormOpen);
   };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <>
-      <nav className="w-full h-16 bg-transparent backdrop-blur-2xl shadow-md border rounded-xl mt-2 bg-">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full">
+      <nav className="w-full h-16 bg-transparent backdrop-blur-2xl shadow-md border rounded-xl mt-2 relative z-50">
+        {/* Ensure the navbar has a high z-index */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full relative">
           <div className="flex-shrink-0">
             <a href="#" className="text-2xl font-bold text-gray-800">
               Logo
@@ -30,12 +38,36 @@ export const Navbar = () => {
             >
               About
             </a>
-            <a
-              href="#services"
-              className="text-gray-800 transition-shadow duration-500 ease-in-out font-bold hover:shadow-xl hover:shadow-gray-300 px-3 py-2 rounded-lg"
-            >
-              Services
-            </a>
+
+            {/* Services Dropdown */}
+            <div className="relative">
+              <button
+                onClick={toggleDropdown}
+                className="text-gray-800 transition-shadow duration-500 ease-in-out font-bold hover:shadow-xl hover:shadow-gray-300 px-3 py-2 rounded-lg"
+              >
+                Services
+              </button>
+              {isDropdownOpen && (
+                <div
+                  className="absolute right-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-50"
+                  style={{ zIndex: 100 }}  // Adjust z-index for dropdown menu
+                >
+                  <Link
+                    to="/commercial-services"
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >
+                    Commercial Services
+                  </Link>
+                  <Link
+                    to="/student-services"
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >
+                    Student Services
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <a
               href="#contact"
               className="text-gray-800 transition-shadow duration-500 ease-in-out font-bold hover:shadow-xl hover:shadow-gray-300 px-3 py-2 rounded-lg"
